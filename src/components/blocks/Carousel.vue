@@ -1,7 +1,8 @@
-<script setup>
+<script setup lang="ts">
   import { Pagination, EffectCoverflow } from 'swiper/modules';
 
   import { Swiper, SwiperSlide } from 'swiper/vue';
+  import type { Swiper as SwiperType } from 'swiper';
 
   import 'swiper/css';
   import 'swiper/css/pagination';
@@ -14,7 +15,7 @@
 
   const slides = [slide1, slide2, slide3, slide4, slide5];
 
-  const onSwiper = (swiper) => {
+  const onSwiper = (swiper: SwiperType) => {
     console.log(swiper);
   };
   const onSlideChange = () => {
