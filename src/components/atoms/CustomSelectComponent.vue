@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { ref, watch, onMounted, defineProps } from 'vue';
+  import { ref, watch, onMounted } from 'vue';
 
   const props = defineProps({
     options: {
@@ -8,7 +8,7 @@
     },
     modelValue: {
       type: String,
-      default: '',
+      default: 'kindergarten',
     },
     placeholder: {
       type: String,
@@ -20,7 +20,6 @@
 
   onMounted(() => {
     if (props.options.length > 0) {
-      selectedOption.value = props.options[0];
       placeholder.value = props.options[0].label;
     }
   });

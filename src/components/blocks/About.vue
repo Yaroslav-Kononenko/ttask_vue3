@@ -16,8 +16,15 @@
 
   function submitForm() {
     console.log('Form Submitted:', form.value);
+    resetForm();
   }
 
+  function resetForm() {
+    form.value = {
+      level: 'kindergarten',
+      email: '',
+    };
+  }
 </script>
 
 <template>
@@ -74,7 +81,7 @@
         <form @submit.prevent="submitForm" class="form">
           <div class="form__field">
             <div class="label">Kid's grade</div>
-            <CustomSelectComponent :options=levelOptions v-model="form.level"/>
+            <CustomSelectComponent :options="levelOptions" v-model="form.level"/>
           </div>
 
           <div class="form__field">
