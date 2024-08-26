@@ -1,0 +1,94 @@
+:root {
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+  font-family: "Montserrat", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: responsiveFontSize(12px, 16px);
+  line-height: responsiveLineHeight(16px, 24px);
+  font-weight: 600;
+
+  color: $colorPrimary;
+  background-color: $mainBgColor;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: clamp(20px, 2vw + 1rem, 48px);
+  line-height: clamp(28px, 3vw + 1rem, 64px);
+  font-weight: 800;
+  margin: 0;
+}
+
+input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid $colorAccent-green;
+  width: 100%;
+  background-color: $mainBgColor;
+
+  font-size: 16px;
+  line-height: 24px;
+
+
+  &:focus {
+    border: none;
+  }
+}
+
+#app {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @include ondesktop {
+    padding: 0;
+
+    & > :nth-child(n) {
+      padding-left: 108px;
+      padding-right: 108px;
+    }
+  }
+}
+
+.accent {
+  font-weight: 800;
+
+  &--green {
+    color: $colorAccent-green;
+  }
+
+  &--orange {
+    color: $colorAccent-orange;
+  }
+}
+
+.title {
+  font-size: 14px;
+  line-height: 28px;
+  margin-bottom: 8px;
+
+  @include ondesktop {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 26px;
+  }
+}
+
+.line-break {
+  @include ondesktop {
+    display: none;
+  }
+
+  &--desktop {
+    display: none;
+  }
+}

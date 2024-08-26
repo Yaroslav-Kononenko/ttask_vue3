@@ -1,0 +1,7 @@
+@function responsiveFontSize($min, $max) {
+  @return clamp(#{$min}, 2vw + 1rem, #{$max});
+}
+
+@function responsiveLineHeight($min, $max) {
+  @return clamp(#{$min},  3vw + 1rem, #{$max});
+}
